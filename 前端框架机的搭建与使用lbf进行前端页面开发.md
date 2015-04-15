@@ -68,15 +68,57 @@ localServer默认占用两个端口80和8081<br>
 
 ## 2. 前端页面开发
 ### 2.1 版本拉取
-+ view资源和静态资源分别新建分支：
++ 模板资源和静态资源分别新建分支：
 
-	svn co https://sh-svn.tencent.com/basic/basic_corporatespace_rep/static_b_qq_com_proj/trunk/store
+	svn co https://sh-svn.tencent.com/basic/basic_corporatespace_rep/static_b_qq_com_proj/trunk/store <br>
 	svn co http://sh-svn.tencent.com/ba/ba_frontend_rep/view_proj/trunk/store/views
 
 + 将原store/src/views的svn引用进行更改
 + merge的时候也需要分别merge入库
 
-### 2.2 开发
+### 2.2 页面开发
+
+### 2.2.1 模版开发
+路径：store/src/views/config/hrtx.html<br>
+引用JS：
+
+	<%
+		headerData = {
+			"userId": data.userInfo.userId, 
+			"os": data.agentInfo.os,
+			"locals": locals,
+			"title": "配置产品"
+		};
+	%>
+	<%== widget('/widget/header.html', headerData) %>
+		<!-- 这里是正文
+		<div id="nav" class="navHrtx">
+		...
+		</div>
+		-->
+	<%== widget('/widget/footer.html', footerData) %>
+	<script>
+	    LBF.use(['store.modules.config.Hrtx'], function(require, Hrtx){
+	        new Hrtx();
+	    });
+	</script>
+### 2.2.2 CSS开发
+路径：store/src/themes/<br>
+
+### 2.2.3 JS开发
+路径：store/src/modules
+
++ require
++ 命名
++ elements
++ 事件触发
++ defaults渲染
++ function
+
+### 2.2.4 page和cgi接口
+路径：
++ store/test/page/config/hrtx.json<br>
++ store/test/cgi/config/calPrice.json<br>
 
 #### 2.1 lbf API
 [lbf官网](http://lbf.epc.oa.com/) <br>
