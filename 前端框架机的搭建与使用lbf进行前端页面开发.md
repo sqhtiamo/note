@@ -10,7 +10,7 @@
 	node -v
 	npm -v
 
-<b>[内部 Node.JS NPM 镜像使用方法]http://km.oa.com/group/502/articles/show/167873?kmref=related_post</b><br>
+<b>[内部 Node.JS NPM 镜像使用方法](http://km.oa.com/group/502/articles/show/167873?kmref=related_post)</b>
 	
 	npm config set registry http://npm.oa.com
 	npm --registry http://npm.oa.com install <package>
@@ -66,4 +66,20 @@ localServer默认占用两个端口80和8081<br>
         }
 	},
 
+## 2. 前端页面开发
+### 2.1 版本拉取
++ view资源和静态资源分别新建分支：
 
+	svn co https://sh-svn.tencent.com/basic/basic_corporatespace_rep/static_b_qq_com_proj/trunk/store
+	svn co http://sh-svn.tencent.com/ba/ba_frontend_rep/view_proj/trunk/store/views
+
++ 将原store/src/views的svn引用进行更改
++ merge的时候也需要分别merge入库
+
+### 2.2 开发
+
+#### 2.1 lbf API
+[lbf官网](http://lbf.epc.oa.com/) <br>
+lbf源代码: svn co https://sh-svn.tencent.com/basic/basic_corporatespace_rep/LBF_pro) 
+
+### 2.3 上线
